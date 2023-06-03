@@ -132,18 +132,20 @@
 
           <div class="content">
             <center>
-            <div class="ui statistic">
+              <div class="ui statistic">
                 <div class="value">
                   <p class="text-white">
                   <span>&#8377;</span>
-                 <% (total_sales.forEach(function(order){ %>
-                    <%= order.TotalItemsOrdered %>
-                  <% })); %>
+                  <% if (total_sales && total_sales.length > 0) { %>
+                    <% total_sales.forEach(function(order) { %>
+                      <%= order.TotalItemsOrdered %>
+                    <% }); %>
+                  <% } %>
+
                 </p>
                 </div>
                 <div class="label">
                   Total Sales
-                </div>
             </div>
           </center>
           </div>

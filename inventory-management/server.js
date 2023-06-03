@@ -17,10 +17,10 @@ if (process.env.NODE_ENV !== 'production') {
 
   const mysqlConnection = mysql.createConnection({
     host:'127.0.0.1',
-    port:3304,
+    port:'3304',
     user: process.env.db_user_name,
     password: process.env.db_password,
-    database: process.warehousedb
+    database: process.env.warehousedb
   });
 
   mysqlConnection.connect((err)=>{
