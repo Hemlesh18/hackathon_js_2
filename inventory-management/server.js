@@ -10,10 +10,10 @@ const flash = require('express-flash')
 const session = require('express-session')
 const methodOverride = require('method-override')
 const mysql = require('mysql2');
-const bodyparser = require('body-parser');
+
 
 var port =  5001;
-app.use(bodyparser.json());
+app.use(express.json());
 
 var mysqlConnection = mysql.createConnection({
   host:'127.0.0.1',
