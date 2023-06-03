@@ -110,11 +110,14 @@
     </ul>
   </div>
   <!-- End vertical navbar -->
-  
+
   <!-- Page content holder -->
   <div class="page-content p-5" id="content" style="background: linear-gradient(to right, #e9edf1 47%, #ff8ab3 100%);">
     <!-- Toggle button -->
-    <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="align justify icon"></i><small class="text-uppercase font-weight-bold">Menu</small></button>
+    <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4">
+      <i class="align justify icon"></i>
+      <small class="text-uppercase font-weight-bold">Menu</small>
+    </button>
 
     <!-- Page content -->
 
@@ -135,7 +138,7 @@
              <div class="ui statistic">
                 <div class="value">
                   <p class="text-white">
-                  <span>&#8377;</span>
+                  <span><i class="dollar sign icon"></i></span>
                   <% if (total_sales && total_sales.length > 0) { %>
                     <% total_sales.forEach(function(order) { %>
                       <%= order.TotalItemsOrdered %>
