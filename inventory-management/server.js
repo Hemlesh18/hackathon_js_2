@@ -186,7 +186,7 @@ function checkNotAuthenticated(req, res, next) {
   next()
 }
 
-app.listen(port, ()=>console.log(`Express Server is running at ${port} port`))
+app.listen(port, ()=>console.log(`Express Server is running at http://localhost:${port}/ `))
 app.get('/employees', (req,res) =>{
   mysqlConnection.query('SELECT * FROM warehouse', (err, rows, fields)=>{
     if(!err)
@@ -196,7 +196,7 @@ app.get('/employees', (req,res) =>{
   })
 })
 
-//View Orders
+// //View Orders
 app.get('/orders', checkAuthenticated,(req,res) =>{
   let sql = 'SELECT TransactionID,SUM(Amount) as Amount,TransactionDate,TransactionTime FROM ordersdb GROUP BY TransactionID';
 
