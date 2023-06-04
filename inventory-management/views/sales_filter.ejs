@@ -25,23 +25,27 @@
       </div>
     </div>
     <form action="/logout?_method=DELETE" method="POST">
-      <center><button type="submit" class="btn btn-danger" ><p class="text-white">Log Out</p></button></center>
+      <center>
+        <button type="submit" class="btn btn-danger" >
+          <p class="text-white">Log Out</p>
+        </button>
+      </center>
     </form>
     <h5 class="ui horizontal divider header text-primary">
       MAIN
     </h5>
-  
+
     <ul class="nav flex-column bg-white mb-0">
       <li class="nav-item">
         <a href="/" class="nav-link text-dark font-italic" >
                   <i class="home icon"></i>
                   Dashboard
-                
+
               </a>
       </li>
       <li class="nav-item">
         <a href="/billing" class="nav-link text-dark font-italic">
-          <i class="rupee sign icon"></i>
+          <i class="dollar sign icon"></i>
                   Bill
               </a>
       </li>
@@ -64,11 +68,11 @@
               </a>
       </li>
     </ul>
-  
+
     <h5 class="ui horizontal divider header text-primary">
       CUSTOMIZE
     </h5>
-  
+
     <ul class="nav flex-column bg-white mb-0">
       <li class="nav-item">
         <a href="/brands" class="nav-link text-dark font-italic">
@@ -89,11 +93,11 @@
               </a>
       </li>
     </ul>
-  
+
     <h5 class="ui horizontal divider header text-primary">
       FILTERS
     </h5>
-  
+
     <ul class="nav flex-column bg-white mb-0">
       <li class="nav-item">
         <a href="/sales_filter" class="nav-link text-dark font-italic" style="background: linear-gradient(to right, #0066eb 0%, #ff8ab3 68%);">
@@ -110,15 +114,18 @@
     </ul>
   </div>
   <!-- End vertical navbar -->
-  
-  
+
+
   <!-- Page content holder -->
   <div class="page-content p-5" id="content" style="background: linear-gradient(to right, #e9edf1 47%, #ff8ab3 100%); ">
     <!-- Toggle button -->
-    <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="align justify icon"></i><small class="text-uppercase font-weight-bold">Menu</small></button>
-  
+    <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4">
+      <i class="align justify icon"></i>
+      <small class="text-uppercase font-weight-bold">Menu</small>
+    </button>
+
     <!-- Page content -->
-   
+
     <br>
     <h1>SALES FILTER</h1>
     <br>
@@ -130,7 +137,7 @@
     <div class="column">
     <h3>Select Time Period</h3>
     </div>
-    
+
     <div class="column">
       <div class="form-check form-check-inline form-switch">
           <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="month" oninput="myFunction()">
@@ -173,8 +180,8 @@
           </select>
     </div>
     </div>
-    
-    
+
+
     <div class="row">
     <div class="column">
     <h3>Filter By</h3>
@@ -198,9 +205,9 @@
             Category
         </label>
     </div>
-  
+
     </div>
-   
+
     </div>
     </div>
     <br>
@@ -216,10 +223,10 @@
 </form>
     <br>
     <br>
-  
+
     <% if (time_type == 'month') { %>
-      
-      <% if (filter_type == 'all') { %> 
+
+      <% if (filter_type == 'all') { %>
         <div class="ui container">
           <canvas id="myChart"></canvas>
         </div>
@@ -234,14 +241,14 @@
             <div class="content">
               <div class="center aligned header"></div>
               <div class="center aligned description">
-                <h1 class="text-success"><i class="rupee sign icon"></i><% total_amount.forEach(function(order){ %>
+                <h1 class="text-success"><i class="dollar sign icon"></i><% total_amount.forEach(function(order){ %>
                   <%= order.Amount %>
                 <% }); %></h1>
               </div>
             </div>
             <div class="extra content">
               <div class="center aligned author text-danger">
-                <i class="rupee sign icon"></i> Total Sales in <%= month_name %> <%= year %> 
+                <i class="dollar sign icon"></i> Total Sales in <%= month_name %> <%= year %>
               </div>
             </div>
           </div>
@@ -258,7 +265,7 @@
               </div>
               <div class="extra content">
                 <div class="center aligned author text-danger">
-                  <i class="shopping cart icon"></i> Total Items Sold in <%= month_name %> <%= year %> 
+                  <i class="shopping cart icon"></i> Total Items Sold in <%= month_name %> <%= year %>
                 </div>
               </div>
             </div>
@@ -270,24 +277,24 @@
           <tr class="table-success">
               <th>Date <i class="calendar alternate outline icon"></i></th>
               <th>Items Sold <i class="cart arrow down icon"></i></th>
-              <th>Total Sales <i class="rupee sign icon"></i></th>
+              <th>Total Sales <i class="dollar sign icon"></i></th>
           </tr>
       </thead>
       <tbody>
           <% display_content.forEach(function(order){ %>
               <tr style="background: linear-gradient(to left, #0066eb 0%, #ff8ab3 68%);">
-                 
+
                   <td><%= order.TransactionDate %></td>
                   <td><%= order.Count %></td>
-                  <td><i class="rupee sign icon"></i> <%= order.Amount %></td>
+                  <td><i class="dollar sign icon"></i> <%= order.Amount %></td>
               </tr>
           <% }); %>
         </tbody>
       </table>
-    </center> 
+    </center>
         <% } %>
 
-        <% if (filter_type == 'brand') { %> 
+        <% if (filter_type == 'brand') { %>
           <center>
             <h2 class="text-primary">Showing Results for <%= month_name %> (<%= year %>), Filter_Type = BRAND </h2>
             <br>
@@ -302,14 +309,14 @@
                 <div class="content">
                   <div class="center aligned header"></div>
                   <div class="center aligned description">
-                    <h1 class="text-success"><i class="rupee sign icon"></i><% total_amount.forEach(function(order){ %>
+                    <h1 class="text-success"><i class="dollar sign icon"></i><% total_amount.forEach(function(order){ %>
                       <%= order.Amount %>
                     <% }); %></h1>
                   </div>
                 </div>
                 <div class="extra content">
                   <div class="center aligned author text-danger">
-                    <i class="rupee sign icon"></i> Total Sales in <%= month_name %> <%= year %> 
+                    <i class="dollar sign icon"></i> Total Sales in <%= month_name %> <%= year %>
                   </div>
                 </div>
               </div>
@@ -326,7 +333,7 @@
                   </div>
                   <div class="extra content">
                     <div class="center aligned author text-danger">
-                      <i class="shopping cart icon"></i> Total Items Sold in <%= month_name %> <%= year %> 
+                      <i class="shopping cart icon"></i> Total Items Sold in <%= month_name %> <%= year %>
                     </div>
                   </div>
                 </div>
@@ -338,7 +345,7 @@
             <tr class="table-success">
                 <th>Brand <i class="yelp icon"></i></th>
                 <th>Items Sold <i class="cart arrow down icon"></i></th>
-                <th>Total Sales <i class="rupee sign icon"></i></th>
+                <th>Total Sales <i class="dollar sign icon"></i></th>
             </tr>
         </thead>
         <tbody>
@@ -346,7 +353,7 @@
                 <tr style="background: linear-gradient(to left, #0066eb 0%, #ff8ab3 68%);">
                     <td><%= order.Brand %></td>
                     <td><%= order.Count %></td>
-                    <td><i class="rupee sign icon"></i> <%= order.Amount %> </td> 
+                    <td><i class="dollar sign icon"></i></i> <%= order.Amount %> </td>
                 </tr>
             <% }); %>
           </tbody>
@@ -354,7 +361,7 @@
       </center>
         <% } %>
 
-        <% if (filter_type == 'category') { %> 
+        <% if (filter_type == 'category') { %>
           <center>
             <h2 class="text-primary">Showing Results for <%= month_name %> (<%= year %>), Filter_Type = CATEGORY </h2>
             <br>
@@ -365,14 +372,14 @@
                 <div class="content">
                   <div class="center aligned header"></div>
                   <div class="center aligned description">
-                    <h1 class="text-success"><i class="rupee sign icon"></i><% total_amount.forEach(function(order){ %>
+                    <h1 class="text-success"><i class="dollar sign icon"></i><% total_amount.forEach(function(order){ %>
                       <%= order.Amount %>
                     <% }); %></h1>
                   </div>
                 </div>
                 <div class="extra content">
                   <div class="center aligned author text-danger">
-                    <i class="rupee sign icon"></i> Total Sales in <%= month_name %> <%= year %> 
+                    <i class="dollar sign icon"></i> Total Sales in <%= month_name %> <%= year %>
                   </div>
                 </div>
               </div>
@@ -389,7 +396,7 @@
                   </div>
                   <div class="extra content">
                     <div class="center aligned author text-danger">
-                      <i class="shopping cart icon"></i> Total Items Sold in <%= month_name %> <%= year %> 
+                      <i class="shopping cart icon"></i> Total Items Sold in <%= month_name %> <%= year %>
                     </div>
                   </div>
                 </div>
@@ -401,7 +408,7 @@
             <tr class="table-success">
                 <th>Category <i class="list icon"></i></th>
                 <th>Items Sold <i class="cart arrow down icon"></i></th>
-                <th>Total Sales <i class="rupee sign icon"></i></th>
+                <th>Total Sales <i class="dollar sign icon"></i></th>
             </tr>
         </thead>
         <tbody>
@@ -409,7 +416,7 @@
                 <tr style="background: linear-gradient(to left, #0066eb 0%, #ff8ab3 68%);">
                     <td><%= order.Category %></td>
                     <td><%= order.Count %></td>
-                    <td><i class="rupee sign icon"></i> <%= order.Amount %> </td> 
+                    <td><i class="dollar sign icon"></i></i> <%= order.Amount %> </td>
                 </tr>
             <% }); %>
           </tbody>
@@ -422,8 +429,8 @@
 
       <% if (time_type == 'year') { %>
         <% const monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"]; %> 
-        <% if (filter_type == 'all') { %> 
+        "July", "August", "September", "October", "November", "December"]; %>
+        <% if (filter_type == 'all') { %>
         <center>
           <h2 class="text-primary">Showing Results for (<%= year %>), Filter_Type = ALL</h2>
           <br>
@@ -434,14 +441,14 @@
               <div class="content">
                 <div class="center aligned header"></div>
                 <div class="center aligned description">
-                  <h1 class="text-success"><i class="rupee sign icon"></i><% total_amount.forEach(function(order){ %>
+                  <h1 class="text-success"><i class="dollar sign icon"></i><% total_amount.forEach(function(order){ %>
                     <%= order.Amount %>
                   <% }); %></h1>
                 </div>
               </div>
               <div class="extra content">
                 <div class="center aligned author text-danger">
-                  <i class="rupee sign icon"></i> Total Sales in <%= year %> 
+                  <i class="dollar sign icon"></i></i> Total Sales in <%= year %>
                 </div>
               </div>
             </div>
@@ -458,7 +465,7 @@
                 </div>
                 <div class="extra content">
                   <div class="center aligned author text-danger">
-                    <i class="shopping cart icon"></i> Total Items Sold in <%= year %> 
+                    <i class="shopping cart icon"></i> Total Items Sold in <%= year %>
                   </div>
                 </div>
               </div>
@@ -470,24 +477,24 @@
             <tr class="table-success">
                 <th>Month <i class="calendar alternate outline icon"></i></th>
                 <th>Items Sold <i class="cart arrow down icon"></i></th>
-                <th>Total Sales <i class="rupee sign icon"></i></th>
+                <th>Total Sales <i class="dollar sign icon"></i></th>
             </tr>
         </thead>
         <tbody>
             <% display_content.forEach(function(order){ %>
                 <tr style="background: linear-gradient(to left, #0066eb 0%, #ff8ab3 68%);">
-                   
+
                     <td><%= monthNames[parseInt(order.TMonth)-1] %></td>
                     <td><%= order.Count %></td>
-                    <td><i class="rupee sign icon"></i> <%= order.Amount %></td>
+                    <td><i class="dollar sign icon"></i><%= order.Amount %></td>
                 </tr>
             <% }); %>
           </tbody>
         </table>
-      </center> 
+      </center>
           <% } %>
-  
-          <% if (filter_type == 'brand') { %> 
+
+          <% if (filter_type == 'brand') { %>
             <center>
               <h2 class="text-primary">Showing Results for (<%= year %>), Filter_Type = BRAND </h2>
               <br>
@@ -498,14 +505,14 @@
                   <div class="content">
                     <div class="center aligned header"></div>
                     <div class="center aligned description">
-                      <h1 class="text-success"><i class="rupee sign icon"></i><% total_amount.forEach(function(order){ %>
+                      <h1 class="text-success"><i class="dollar sign icon"></i><% total_amount.forEach(function(order){ %>
                         <%= order.Amount %>
                       <% }); %></h1>
                     </div>
                   </div>
                   <div class="extra content">
                     <div class="center aligned author text-danger">
-                      <i class="rupee sign icon"></i> Total Sales in <%= year %> 
+                      <i class="dollar sign icon"></i> Total Sales in <%= year %>
                     </div>
                   </div>
                 </div>
@@ -522,7 +529,7 @@
                     </div>
                     <div class="extra content">
                       <div class="center aligned author text-danger">
-                        <i class="shopping cart icon"></i> Total Items Sold in <%= year %> 
+                        <i class="shopping cart icon"></i> Total Items Sold in <%= year %>
                       </div>
                     </div>
                   </div>
@@ -534,7 +541,7 @@
               <tr class="table-success">
                   <th>Brand <i class="yelp icon"></i></th>
                   <th>Items Sold <i class="cart arrow down icon"></i></th>
-                  <th>Total Sales <i class="rupee sign icon"></i></th>
+                  <th>Total Sales <i class="dollar sign icon"></i></th>
               </tr>
           </thead>
           <tbody>
@@ -542,15 +549,15 @@
                   <tr style="background: linear-gradient(to left, #0066eb 0%, #ff8ab3 68%);">
                       <td><%= order.Brand %></td>
                       <td><%= order.Count %></td>
-                      <td><i class="rupee sign icon"></i> <%= order.Amount %> </td> 
+                      <td><i class="dollar sign icon"></i> <%= order.Amount %> </td>
                   </tr>
               <% }); %>
             </tbody>
           </table>
         </center>
           <% } %>
-  
-          <% if (filter_type == 'category') { %> 
+
+          <% if (filter_type == 'category') { %>
             <center>
               <h2 class="text-primary">Showing Results for (<%= year %>), Filter_Type = CATEGORY </h2>
               <br>
@@ -561,14 +568,14 @@
                   <div class="content">
                     <div class="center aligned header"></div>
                     <div class="center aligned description">
-                      <h1 class="text-success"><i class="rupee sign icon"></i><% total_amount.forEach(function(order){ %>
+                      <h1 class="text-success"><i class="dollar sign icon"></i><% total_amount.forEach(function(order){ %>
                         <%= order.Amount %>
                       <% }); %></h1>
                     </div>
                   </div>
                   <div class="extra content">
                     <div class="center aligned author text-danger">
-                      <i class="rupee sign icon"></i> Total Sales in <%= year %> 
+                      <i class="dollar sign icon"></i> Total Sales in <%= year %>
                     </div>
                   </div>
                 </div>
@@ -585,7 +592,7 @@
                     </div>
                     <div class="extra content">
                       <div class="center aligned author text-danger">
-                        <i class="shopping cart icon"></i> Total Items Sold in <%= year %> 
+                        <i class="shopping cart icon"></i> Total Items Sold in <%= year %>
                       </div>
                     </div>
                   </div>
@@ -597,7 +604,7 @@
               <tr class="table-success">
                   <th>Category <i class="list icon"></i></th>
                   <th>Items Sold <i class="cart arrow down icon"></i></th>
-                  <th>Total Sales <i class="rupee sign icon"></i></th>
+                  <th>Total Sales <i class="dollar sign icon"></i></th>
               </tr>
           </thead>
           <tbody>
@@ -605,26 +612,26 @@
                   <tr style="background: linear-gradient(to left, #0066eb 0%, #ff8ab3 68%);">
                       <td><%= order.Category %></td>
                       <td><%= order.Count %></td>
-                      <td><i class="rupee sign icon"></i> <%= order.Amount %> </td> 
+                      <td><i class="dollar sign icon"></i> <%= order.Amount %> </td>
                   </tr>
               <% }); %>
             </tbody>
           </table>
         </center>
           <% } %>
-  
+
         <% } %>
-  
-     
-      
+
+
+
   </div>
   <!-- End page content -->
-  
-  
-  
+
+
+
   <br>
- 
-  
+
+
   <!--Semantic UI Scripts-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>

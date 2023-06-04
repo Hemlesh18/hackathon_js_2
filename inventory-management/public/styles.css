@@ -1,11 +1,3 @@
-/*
-*
-* ==========================================
-* CUSTOM UTIL CLASSES
-* ==========================================
-*
-*/
-
 .vertical-nav {
     min-width: 17rem;
     width: 17rem;
@@ -17,24 +9,24 @@
     transition: all 0.4s;
     overflow-y:auto
   }
-  
+
   .page-content {
     width: calc(100% - 17rem);
     margin-left: 17rem;
     transition: all 0.4s;
   }
-  
+
   /* for toggle behavior */
-  
+
   #sidebar.active {
     margin-left: -17rem;
   }
-  
+
   #content.active {
     width: 100%;
     margin: 0;
   }
-  
+
   @media (max-width: 768px) {
     #sidebar {
       margin-left: -17rem;
@@ -51,15 +43,7 @@
       width: calc(100% - 17rem);
     }
   }
-  
-  /*
-  *
-  * ==========================================
-  * FOR DEMO PURPOSE
-  * ==========================================
-  *
-  */
-/*   
+/*
   body {
     background: #599fd9;
     background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
@@ -67,20 +51,20 @@
     min-height: 100vh;
     overflow-x: hidden;
   } */
-  
+
   .separator {
     margin: 3rem 0;
     border-bottom: 1px dashed #fff;
   }
-  
+
   .text-uppercase {
     letter-spacing: 0.1em;
   }
-  
+
   .text-gray {
     color: #aaa;
   }
-  
+
   a:hover {
     background: linear-gradient(to right, #00ebb0 26%, #b016da 91%);
     }
@@ -88,10 +72,9 @@
     #pdf {
       text-align: center;
     }
-    
+
     #pdf canvas {
       border: 1px solid black;
       width: 95%;
     }
 
-    
